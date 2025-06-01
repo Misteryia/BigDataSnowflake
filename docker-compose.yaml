@@ -1,0 +1,13 @@
+services:
+  pg:
+    image: postgres:latest
+    container_name: lr1
+    environment:
+      POSTGRES_DB: leon
+      POSTGRES_USER: leon
+      POSTGRES_PASSWORD: 6666
+    volumes:
+      - './scripts/:/docker-entrypoint-initdb.d/'
+      - './src/:/data/'
+    ports:
+      - "5432:5432"
